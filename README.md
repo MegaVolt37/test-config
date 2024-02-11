@@ -9,7 +9,7 @@ npm install
 ```
 
 ```sh
-npm run dev
+npm run serve
 ```
 
 # Start client for Development
