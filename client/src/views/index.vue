@@ -31,22 +31,18 @@
 					id="size"
 				/>
 			</div>
-			<div class="home__card">
+			<div class="home__card" v-if="findProductSelected">
 				<span>{{ findProductSelected?.name }}</span>
 				<img
-					v-if="findProductSelected?.image"
 					class="home__card-image"
 					:src="findProductSelected?.image"
 					:alt="findProductSelected.name"
 				/>
-				<button
-					v-if="findProductSelected"
-					class="home__card-button"
-					@click="saveToStorage"
-				>
+				<button class="home__card-button" @click="saveToStorage">
 					Добавить в хранилище
 				</button>
 			</div>
+			<p v-else>Товары отсутствуют, выберите другую конфигурацию</p>
 		</div>
 	</div>
 </template>
