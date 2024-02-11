@@ -23,7 +23,7 @@ npm install
 ```
 
 ```sh
-npm run serve
+npm run dev
 ```
 
 # Start client for Deployment
