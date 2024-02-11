@@ -8,10 +8,8 @@ export const useStoreProducts = defineStore(
 		const addToStore = (product) => {
 			const index = products.value.findIndex((el) => el.id === product.id)
 			if (index === -1) {
-				// Объект с таким ID не найден, добавляем новый объект
 				products.value.push(product)
 			} else {
-				// Объект с таким ID найден, обновляем его поле count
 				products.value[index].count = product.count
 			}
 		}

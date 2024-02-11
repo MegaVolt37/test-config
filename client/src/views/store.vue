@@ -56,7 +56,6 @@
 <script setup>
 import { useStoreProducts } from '@/stores'
 import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
 import { FILTERS_NAMES } from '@/tools/constants'
 const { products } = storeToRefs(useStoreProducts())
 const { increaseQuantity, decreaseQuantity } = useStoreProducts()
@@ -72,8 +71,6 @@ const { increaseQuantity, decreaseQuantity } = useStoreProducts()
 	&__list {
 		width: 100%;
 		border-spacing: 0 30px;
-	}
-	&__header {
 	}
 	&__cell {
 		text-align: left;

@@ -44,7 +44,7 @@
 					class="home__card-button"
 					@click="saveToStorage"
 				>
-					Add to Storage
+					Добавить в хранилище
 				</button>
 			</div>
 		</div>
@@ -57,6 +57,7 @@ import { useProducts, useFilters } from '@/composables'
 import { FILTERS_NAMES } from '@/tools/constants'
 import { useStoreProducts } from '@/stores'
 import { ref, computed } from 'vue'
+
 const { addToStore } = useStoreProducts()
 
 const { products } = useProducts()
@@ -83,14 +84,12 @@ const selectedOptionsValue = computed(() => ({
 const isSizeMatch = (itemSize, selectedSize) => {
 	return selectedSize === null || itemSize === selectedSize
 }
-
 const isDrinkQuantityMatch = (itemCounts, selectedCounts) => {
 	return (
 		selectedCounts.length === 0 ||
 		selectedCounts.every((qty) => itemCounts.includes(qty))
 	)
 }
-
 const findProductSelected = computed(() => {
 	const { drinkQuantity, size } = selectedOptionsValue.value
 	if (!drinkQuantity.length && typeof size !== 'number') return null
@@ -117,7 +116,6 @@ const saveToStorage = () => {
 		filters,
 		count: 1,
 	})
-	// console.log(findProductSelected.value)
 }
 </script>
 
@@ -134,8 +132,6 @@ const saveToStorage = () => {
 		width: 50%;
 		margin: 0 auto;
 	}
-	&__info {
-	}
 	&__info-item {
 		display: flex;
 		gap: 10px;
@@ -150,7 +146,6 @@ const saveToStorage = () => {
 		margin-top: 50px;
 		display: flex;
 		flex-direction: column;
-		// justify-content: center;
 		gap: 20px;
 		align-items: center;
 	}
@@ -159,13 +154,10 @@ const saveToStorage = () => {
 		width: 100%;
 		aspect-ratio: 1/1;
 	}
-	&__card-button {
-	}
 	&__filters {
 		display: flex;
 		width: 100%;
 		flex-direction: column;
-		// position: relative;
 		gap: 30px;
 	}
 	&__filters-select {
